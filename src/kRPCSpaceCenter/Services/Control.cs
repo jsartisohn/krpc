@@ -102,6 +102,18 @@ namespace KRPCSpaceCenter.Services
             set { PilotAddon.Yaw = value; }
         }
 
+        [KRPCProperty]
+        public float WheelThrottle {
+            get { return FlightInputHandler.state.wheelThrottle; }
+            set { FlightInputHandler.state.wheelThrottle = value; }
+        }
+
+        [KRPCProperty]
+        public float WheelSteering {
+            get { return FlightInputHandler.state.wheelSteer; }
+            set { FlightInputHandler.state.wheelSteer = value; }
+        }
+
         [KRPCMethod]
         public void ActivateNextStage ()
         {
