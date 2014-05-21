@@ -10,6 +10,8 @@ master
    - Add Orbit.TimeToSOIChange
    - Add Orbit.NextOrbit
    - Add Node.Orbit
+   - Add Control.WheelThrottle
+   - Add Control.WheelSteering
    - Resources.Names now returns a list of resource names
    - Add support for abort and 0 action groups
 
