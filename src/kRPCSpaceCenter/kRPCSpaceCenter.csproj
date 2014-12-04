@@ -77,6 +77,10 @@
       <Project>{7AFEDBF8-2224-4D6C-BA8B-D24ABF2D2BDE}</Project>
       <Name>kRPC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\kRPCCompatibility\kRPCCompatibility.csproj">
+      <Project>{C570905F-8A82-45E9-9690-B3022BF3D275}</Project>
+      <Name>kRPCCompatibility</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Schema\" />

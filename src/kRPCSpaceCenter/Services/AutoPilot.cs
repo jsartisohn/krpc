@@ -4,6 +4,7 @@ using UnityEngine;
 using KRPC.Service.Attributes;
 using KRPC.Utils;
 using KRPCSpaceCenter.ExtensionMethods;
+using KRPCCompatibility;
 using Tuple3 = KRPC.Utils.Tuple<double,double,double>;
 
 namespace KRPCSpaceCenter.Services
@@ -34,6 +35,10 @@ namespace KRPCSpaceCenter.Services
         internal AutoPilot (global::Vessel vessel)
         {
             this.vessel = vessel;
+            referenceFrame = ReferenceFrame.Orbital (vessel);
+            if (RemoteTech.API.HasFlightComputer(vessel.id)) {
+                RemoteTech.API.AddSanctionedPilot (vessel.id, DoAutoPiloting);
+            }
         }
 
         public override bool Equals (AutoPilot other)
@@ -139,6 +144,9 @@ namespace KRPCSpaceCenter.Services
         /// </summary>
         void DoAutoPiloting (FlightCtrlState state)
         {
+            if (!engaged.Contains(this))
+                return;
+
             Vector3d CoM = vessel.findWorldCenterOfMass ();
             Vector3d MoI = vessel.findLocalMOI (CoM);
 
