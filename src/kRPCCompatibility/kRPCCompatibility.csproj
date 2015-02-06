@@ -30,13 +30,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="RemoteTech">
-      <HintPath>..\..\..\ksp_dev\RemoteTech\Plugins\RemoteTech.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\lib\KSP_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="RemoteTech">
+      <HintPath>..\..\lib\RemoteTech\RemoteTech.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
